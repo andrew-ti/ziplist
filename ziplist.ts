@@ -3,7 +3,7 @@ function zipList(list1: (string | number)[], list2: (string | number)[]): (strin
 
     if(list1.length !== list2.length) {
         console.log("Lists must be of equal length");
-        return list3;
+        return [];
     }
 
     for(let i = 0; i < list1.length; i++) {
@@ -15,6 +15,11 @@ function zipList(list1: (string | number)[], list2: (string | number)[]): (strin
 }
 
 function zipListTheFunctionalWay(list1: (string | number)[], list2: (string | number)[]): (string | number)[] {
+    if(list1.length !== list2.length) {
+        console.log("Lists must be of equal length");
+        return [];
+    }
+    
     return list1.map((x, i) => {
         return [list1[i], list2[i]];
     }).reduce((result, pair) => {
